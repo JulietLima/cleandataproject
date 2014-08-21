@@ -55,11 +55,13 @@ for (i in 1:79) {
 }
 combinednew[1]<-NULL
 names(combinednew) <- names(combined)[1:79] # Variable names
+# Here I extract from the row names the activity and subject codes
 combinednew$id <- row.names(combinednew)
 row.names(combinednew) <- NULL
 combinednew$activity <- substring(combinednew$id, 0, nchar(combinednew$id)-2)
 combinednew$subject <- substring(combinednew$id, nchar(combinednew$id)-1)
 combinednew$subject <- as.numeric(combinednew$subject)
 
-## Output 2nd dataset
+# Note: Step 4 is completed earlier in the script
+## Output 2nd dataset (Step 5)
 write.table(combinednew, file="tidy.txt", row.names=FALSE)
