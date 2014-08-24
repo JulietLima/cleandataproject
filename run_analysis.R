@@ -61,6 +61,10 @@ row.names(combinednew) <- NULL
 combinednew$activity <- substring(combinednew$id, 0, nchar(combinednew$id)-2)
 combinednew$subject <- substring(combinednew$id, nchar(combinednew$id)-1)
 combinednew$subject <- as.numeric(combinednew$subject)
+combinednew$id <- NULL
+
+# Re-order columns
+combinednew <- combinednew[,c(81,80,1:79)]
 
 # Note: Step 4 is completed earlier in the script
 ## Output 2nd dataset (Step 5)
