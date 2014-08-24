@@ -26,7 +26,7 @@ train$activities <- trainy$V1
 train$subject <- trainsubject$V1
 # Merge Test and Train
 combined <- rbind(test,train)
-# Further clean up the names and remove dots
+# Further clean up the names and remove dots (Step 4 cont'd)
 names(combined) <- gsub("[.]", "", names(combined))
 
 ## Measurements (Step 2)
